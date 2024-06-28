@@ -1,0 +1,35 @@
+    Symbol Lookup
+    Search for best-matching symbols based on your query. You can input anything from symbol, security's name to ISIN and Cusip.    
+    print(finnhub_client.symbol_lookup('apple'))
+
+    Stock Symbol
+    List supported stocks. We use the following symbology to identify stocks on Finnhub Exchange_Ticker.Exchange_Code. 
+    print(finnhub_client.stock_symbols('US'))
+
+    Market Status
+    Get current market status for global exchanges (whether exchanges are open or close).
+    print(finnhub_client.market_status(exchange='US'))
+
+    Market Holiday
+    Get a list of holidays for global exchanges.
+    print(finnhub_client.market_holiday(exchange='US'))
+
+    Company Profile 2
+    Get general information of a company. You can query by symbol, ISIN or CUSIP.
+    print(finnhub_client.company_profile2(symbol='AAPL'))
+
+    Market News
+    Get latest market news.
+    print(finnhub_client.general_news('general', min_id=0))
+
+    Company News
+    List latest company news by symbol. This endpoint is only available for North American companies.
+    print(finnhub_client.company_news('AAPL', _from="2020-06-01", to="2020-06-10"))
+
+    Peers
+    Get company peers. Return a list of peers operating in the same country and sector/industry.
+    print(finnhub_client.company_peers('AAPL'))
+
+    Basic Financials
+    Get company basic financials such as margin, P/E ratio, 52-week high/low etc.
+    print(finnhub_client.company_basic_financials('AAPL', 'all'))

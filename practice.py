@@ -20,9 +20,6 @@ def on_close(ws):
 '''
 type:
     subscribe
-    subscribe-news
-    subscribe-pr (premium)
-
 '''
 def on_open(ws):
     ws.send('{"type":"subscribe","symbol":"AAPL"}')
@@ -32,7 +29,6 @@ def on_open(ws):
 
 if __name__ == "__main__":
     finnhub_client = finnhub.Client(api_key=stock_api_key)
-    print(finnhub_client.symbol_lookup('apple'))
     webstring = "wss://ws.finnhub.io?token=" + stock_api_key
     websocket.enableTrace(True)
     ws = websocket.WebSocketApp(webstring,
